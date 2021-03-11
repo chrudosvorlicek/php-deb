@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 current_dir="${0%/*}"
 container_init_directory="${1}"
@@ -19,7 +19,7 @@ php -r "
         unlink('composer-setup.php');
         exit(1);
     }
-    
+
     echo PHP_EOL;
 "
 

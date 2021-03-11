@@ -114,12 +114,12 @@ function install_package {
 
     pkg_install_script="${pkg_conf_path}/install.sh"
 
-    if [[ ! -f "${pkg_install_script}" ]]; then
+    if [[ ! -f ${pkg_install_script} ]]; then
         error "Installation script for the package ${pkg} was not found"
         exit 1
     fi
 
-    sh "${pkg_install_script}" "${CONTAINER_INIT_DIRECTORY}"
+    bash ${pkg_install_script} ${CONTAINER_INIT_DIRECTORY}
 
     if [[ "${?}" != 0 ]]; then
         error "${pkg} installation failed"
