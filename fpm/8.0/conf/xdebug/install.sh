@@ -7,9 +7,5 @@ echo "Copying xdebug initial scripts to the global init directory"
 cp -R "${current_dir}/init.d/." "${container_init_directory}"
 
 echo "Installing xdebug extension"
-apt-get update \
-    && apt-get install --virtual .build-deps $PHPIZE_DEPS \
-    && pecl install xdebug-3.0.2 \
-    && docker-php-ext-enable xdebug \
-    && apt-get clean \
-    && rm -r /var/cache/apt/*
+    pecl install xdebug-3.0.2 \
+    && docker-php-ext-enable xdebug

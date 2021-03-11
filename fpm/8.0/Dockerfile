@@ -11,7 +11,12 @@ RUN chmod +x \
     /usr/local/bin/preset \
     /usr/local/bin/docker-entrypoint
 
-RUN preset install fpm
+RUN preset install fpm \
+    && preset install composer \
+    && preset install xdebug \
+    && preset config laravel
+
+
 
 WORKDIR /var/www/
 
